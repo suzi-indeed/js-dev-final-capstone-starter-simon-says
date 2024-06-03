@@ -10,6 +10,10 @@ html {
   overflow: hidden;
 }
 
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   color: yellow;
   font-family: 'Rubik Microbe', sans-serif;
@@ -35,8 +39,6 @@ h1 {
 
 .start-button {
   display: inline-block;
-  height: 38px;
-  padding: 0 30px;
   color: yellow;
   text-align: center;
   font-size: 14px;
@@ -45,13 +47,16 @@ h1 {
   background-color: transparent;
   border: 1px solid yellow;
   cursor: pointer;
+  border-radius: 50%;
+  height:70px;
+  width:70px;
 }
 
 .start-button:hover {
   color: greenyellow;
-  font-size: 18px;
+  font-size: 14px;
   border-color: greenyellow;
-  transform: rotate(5deg);
+  /*transform: rotate(5deg);*/
 }
 
 .status {
@@ -68,7 +73,7 @@ h1 {
 
 .pad-red {
   border-top-left-radius: 200px;
-  background-color: red;
+  background-color: rgb(206, 79, 79);
 }
 
 .pad-red:hover,
@@ -85,7 +90,7 @@ h1 {
 
 .pad-green {
   border-top-right-radius: 200px;
-  background-color: green;
+  background-color: rgb(107, 203, 107);
 }
 
 .pad-green:hover,
@@ -102,7 +107,7 @@ h1 {
 
 .pad-yellow {
   border-bottom-right-radius: 200px;
-  background-color: yellow;
+  background-color: rgb(232, 232, 116);
 }
 
 .pad-yellow:hover,
@@ -119,7 +124,7 @@ h1 {
 
 .pad-blue {
   border-bottom-left-radius: 200px;
-  background-color: blue;
+  background-color: rgb(67, 67, 208);
 }
 
 .pad-blue:hover,

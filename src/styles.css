@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  color: yellow;
+  color: rgb(232, 232, 116);
   font-family: 'Rubik Microbe', sans-serif;
   display: flex;
   justify-content: center;
@@ -31,6 +31,7 @@ main {
 h1 {
   text-align: center;
   font-size: 40px;
+  color:rgb(232, 232, 116);
 }
 
 .game-controls {
@@ -39,13 +40,13 @@ h1 {
 
 .start-button {
   display: inline-block;
-  color: yellow;
+  color: rgb(232, 232, 116);
   text-align: center;
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
   background-color: transparent;
-  border: 1px solid yellow;
+  border: 1px solid rgb(232, 232, 116);
   cursor: pointer;
   border-radius: 50%;
   height:70px;

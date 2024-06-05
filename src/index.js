@@ -114,8 +114,10 @@ function startButtonHandler() {
 function padHandler(event) {
   const { color } = event.target.dataset;
   if (!color) return;
-
   // TODO: Write your code here.
+  let pad = pads.find(({ color: currentColor }) => currentColor === color);
+  pad.sound.play();
+  checkPress(color);
   return color;
 }
 
@@ -229,7 +231,7 @@ function activatePad(color) {
 function activatePads(sequence) {
   // TODO: Write your code here.
   let counter=1;
-  sequence.array.forEach(element => {
+  sequence.forEach(element => {
     setTimeout(() => {
       activatePad(element.color) }, 600*counter);
       counter=counter+1;
@@ -261,7 +263,12 @@ function activatePads(sequence) {
  */
 function playComputerTurn() {
   // TODO: Write your code here.
-
+  padContainer.classList.add("unclickable");
+  statusSpan.innerHTML="The computer's turn...";
+  heading.innerHTML=`Round ${roundCount} of ${maxRoundCount}`;
+  let randomColor=getRandomItem(pads).color;
+  computerSequence.push(randomColor);
+  activatePads(computerSequence);
   setTimeout(() => playHumanTurn(roundCount), roundCount * 600 + 1000); // 5
 }
 
@@ -274,6 +281,10 @@ function playComputerTurn() {
  */
 function playHumanTurn() {
   // TODO: Write your code here.
+  padContainer.classList.remove("unclickable");
+  //heading.innerHTML=`Round ${roundCount} of ${maxRoundCount}`;
+  //statusSpan.innerHTML="The player's turn";
+  statusSpan.innerHTML=`Round ${roundCount} of ${maxRoundCount}`;
 }
 
 /**
@@ -300,6 +311,16 @@ function playHumanTurn() {
  */
 function checkPress(color) {
   // TODO: Write your code here.
+  playerSequence.push(color);
+  let index = color.index;
+  let remainingPresses = computerSequence.length - playerSequence.length;
+  //heading.innerHTML=`Round ${roundCount} of ${maxRoundCount}`;
+  //statusSpan.innerHTML="The player's turn";
+  statusSpan.innerHTML=`Round ${roundCount} of ${maxRoundCount}`;
+  if (!computerSequence[index]===playerSequence[index]){
+    resetGame("bye bye");
+  }
+  if (remainingPresses === 0){checkRound();}
 }
 
 /**

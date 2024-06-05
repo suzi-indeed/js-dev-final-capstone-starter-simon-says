@@ -87,7 +87,6 @@ startButton.addEventListener("click", startButtonHandler);
  *
  */
 function startButtonHandler() {
-  setLevel();
   maxRoundCount = setLevel();
   roundCount = roundCount + 1;
   startButton.classList.add("hidden");
@@ -200,7 +199,6 @@ function setText(element, text) {
  */
 
 function activatePad(color) {
-  console.log("got this color ",color, "pads is",pads);
   let pad = pads.find(({ color: currentColor }) => currentColor === color);
   pad.selector.classList.add("activated");
   pad.sound.play();
@@ -258,7 +256,6 @@ function playComputerTurn() {
   padContainer.classList.add("unclickable");
   statusSpan.innerHTML = "The computer's turn...";
   heading.innerHTML = `Round ${roundCount} of ${maxRoundCount}`;
-  //let randomColor = getRandomItem(pads).color;
   let randomColor = getRandomItem(pads);
   computerSequence.push(randomColor);
   activatePads(computerSequence);
@@ -300,14 +297,17 @@ function playHumanTurn() {
  *
  */
 function checkPress(color) {
+  console.log("got the color: ",color);
   playerSequence.push(color);
-  let index = color.index;
+  let index = playerSequence.length-1;
   let remainingPresses = computerSequence.length - playerSequence.length;
   statusSpan.innerHTML = `Round ${roundCount} of ${maxRoundCount}`;
-  if (!computerSequence[index] === playerSequence[index]) {
+
+  if (!(computerSequence[index].color === playerSequence[index])) {
+    statusSpan.innerHTML ="bye bye";
     resetGame("bye bye");
   }
-  if (remainingPresses === 0) { checkRound(); }
+  else if (remainingPresses === 0) { checkRound(); }
 }
 
 /**
@@ -347,7 +347,8 @@ function checkRound() {
  */
 function resetGame(text) {
   alert(text);
-  setText(heading, "Simon Says");
+  setText(heading, "Simon");
+  statusSpan.innerHTML = "Simon";
   startButton.classList.remove("hidden");
   statusSpan.classList.add("hidden");
   padContainer.classList.add("unclickable");

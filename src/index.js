@@ -352,6 +352,12 @@ function resetGame(text) {
   startButton.classList.remove("hidden");
   statusSpan.classList.add("hidden");
   padContainer.classList.add("unclickable");
+
+  computerSequence = []; 
+  playerSequence = []; 
+  maxRoundCount = 0; 
+  roundCount = 0; 
+  maxRoundCount = setLevel();
 }
 
 /**

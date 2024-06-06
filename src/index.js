@@ -158,7 +158,7 @@ function padHandler(event) {
  */
 function setLevel(level = 1) {
   switch (level) {
-    case 1: return 18;
+    case 1: return 8;
     case 2: return 14;
     case 3: return 20;
     case 4: return 31;

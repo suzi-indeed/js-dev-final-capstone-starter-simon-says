@@ -91,10 +91,14 @@ startButton.addEventListener("click", startButtonHandler);
  *
  */
 function startButtonHandler() {
-  maxRoundCount = setLevel();
+  let levelSelector = document.querySelector('input[name="level"]:checked');
+  console.log("levelSelector.value is: ", parseInt(levelSelector.value));
+  maxRoundCount = setLevel(parseInt(levelSelector.value));
   roundCount = roundCount + 1;
   startButton.classList.add("hidden");
   statusSpan.classList.remove("hidden");
+  optionsComponent = document.querySelector(".levelFieldSet");
+  optionsComponent.classList.add("hidden");
   playComputerTurn();
   return { startButton, statusSpan };
 }
@@ -155,7 +159,7 @@ function padHandler(event) {
  */
 function setLevel(level = 1) {
   switch (level) {
-    case 1: return 8;
+    case 1: return 18;
     case 2: return 14;
     case 3: return 20;
     case 4: return 31;
@@ -370,6 +374,7 @@ function resetGame(text) {
   setText(heading, 'Simon Says');
   statusSpan.innerHTML = "Simon Says";
   startButton.classList.remove("hidden");
+  optionsComponent.classList.remove("hidden");
   statusSpan.classList.add("hidden");
   padContainer.classList.add("unclickable");
   computerSequence = [];

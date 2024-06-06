@@ -149,3 +149,9 @@ h1 {
 .unclickable {
   pointer-events: none;
 }
+
+fieldset {
+  border: none;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}

@@ -120,8 +120,11 @@ function padHandler(event) {
   const { color } = event.target.dataset;
   if (!color) return;
   let pad = pads.find(({ color: currentColor }) => currentColor === color);
-  pad.sound.play();
-  checkPress(color);
+  pad.sound.play()
+    .then(()=>{
+      checkPress(color);
+    });
+  
   return color;
 }
 
@@ -301,7 +304,6 @@ function playHumanTurn() {
  *
  */
 function checkPress(color) {
-  console.log("got the color: ",color);
   playerSequence.push(color);
   let index = playerSequence.length-1;
   let remainingPresses = computerSequence.length - playerSequence.length;
@@ -359,7 +361,6 @@ function resetGame(text) {
   startButton.classList.remove("hidden");
   statusSpan.classList.add("hidden");
   padContainer.classList.add("unclickable");
-
   computerSequence = []; 
   playerSequence = []; 
   maxRoundCount = 0; 

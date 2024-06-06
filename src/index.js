@@ -92,7 +92,6 @@ startButton.addEventListener("click", startButtonHandler);
  */
 function startButtonHandler() {
   let levelSelector = document.querySelector('input[name="level"]:checked');
-  console.log("levelSelector.value is: ", parseInt(levelSelector.value));
   maxRoundCount = setLevel(parseInt(levelSelector.value));
   roundCount = roundCount + 1;
   startButton.classList.add("hidden");

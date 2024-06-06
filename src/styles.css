@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Microbe&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Microbe&display=swap");
 
 html {
-  background: url('../assets/background.png') no-repeat center center fixed;
+  background: url("../assets/background.png") no-repeat center center fixed;
   box-sizing: border-box;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -10,13 +10,16 @@ html {
   overflow: hidden;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
 body {
   color: rgb(232, 232, 116);
-  font-family: 'Rubik Microbe', sans-serif;
+  /*font-family: 'Rubik Microbe', sans-serif;*/
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
   display: flex;
   justify-content: center;
   height: 100vh;
@@ -24,14 +27,13 @@ body {
 }
 
 main {
-  background-color: #000;
-  padding: 40px;
+  background-color: none;
 }
 
 h1 {
   text-align: center;
   font-size: 40px;
-  color:rgb(232, 232, 116);
+  color: rgb(232, 232, 116);
 }
 
 .game-controls {
@@ -49,8 +51,8 @@ h1 {
   border: 1px solid rgb(232, 232, 116);
   cursor: pointer;
   border-radius: 50%;
-  height:70px;
-  width:70px;
+  height: 70px;
+  width: 70px;
 }
 
 .start-button:hover {
@@ -79,13 +81,13 @@ h1 {
 
 .pad-red:hover,
 .pad-red:focus {
-  background-color: #ff451a;
+  background-color: rgb(206, 79, 79);
   transform: rotate(-5deg);
 }
 
 .pad-red:active,
 .pad-red.activated {
-  background-color: #ff5c36;
+  background-color: rgb(206, 79, 79);
   transform: translateY(10px);
 }
 
@@ -96,13 +98,13 @@ h1 {
 
 .pad-green:hover,
 .pad-green:focus {
-  background-color: #8cc218;
+  background-color: rgb(107, 203, 107);
   transform: rotate(5deg);
 }
 
 .pad-green:active,
 .pad-green.activated {
-  background-color: #a0ea00;
+  background-color: rgb(107, 203, 107);
   transform: translateY(10px);
 }
 
@@ -113,13 +115,13 @@ h1 {
 
 .pad-yellow:hover,
 .pad-yellow:focus {
-  background-color: #ffb900;
+  background-color: rgb(232, 232, 116);
   transform: rotate(5deg);
 }
 
 .pad-yellow:active,
 .pad-yellow.activated {
-  background-color: #ffca3d;
+  background-color: rgb(232, 232, 116);
   transform: translateY(10px);
 }
 
@@ -130,13 +132,13 @@ h1 {
 
 .pad-blue:hover,
 .pad-blue:focus {
-  background-color: #139ddd;
+  background-color: rgb(67, 67, 208);
   transform: rotate(5deg);
 }
 
 .pad-blue:active,
 .pad-blue.activated {
-  background-color: #2bbcff;
+  background-color: rgb(67, 67, 208);
   transform: translateY(10px);
 }
 

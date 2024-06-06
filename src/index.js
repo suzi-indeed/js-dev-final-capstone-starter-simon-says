@@ -37,26 +37,30 @@ import soundBlue from "../assets/simon-says-sound-3.mp3";
 import soundYellow from "../assets/simon-says-sound-4.mp3";
 */
 
+const successSound = new Audio("../assets/success-acoustic-japan-guitar.mp3");
+const failureSound = new Audio("../assets/wrong-answer-sound-zvonekdoma.mp3");
+
+
 const pads = [
   {
     color: "red",
     selector: document.querySelector(".js-pad-red"),
-    sound: new Audio("../assets/simon-says-sound-1.mp3"),
+    sound: new Audio("../assets/bell1-kaonaya-bell-at-daitokuji-temple-kyoto.mp3"),
   },
   {
     color: "green",
     selector: document.querySelector(".js-pad-green"),
-    sound: new Audio("../assets/simon-says-sound-2.mp3"),
+    sound: new Audio("../assets/bell2-snd_fragment_retrievewav-14728.mp3"),
   },
   {
     color: "blue",
     selector: document.querySelector(".js-pad-blue"),
-    sound: new Audio("../assets/simon-says-sound-3.mp3"),
+    sound: new Audio("../assets/bell3-servant-bell-ring-2-211683.mp3"),
   },
   {
     color: "yellow",
     selector: document.querySelector(".js-pad-yellow"),
-    sound: new Audio("../assets/simon-says-sound-4.mp3"),
+    sound: new Audio("../assets/bell4-sleigh-bell-long.mp3"),
   },
 ];
 
@@ -148,7 +152,7 @@ function padHandler(event) {
  */
 function setLevel(level = 1) {
   switch (level) {
-    case 1: return 8;
+    case 1: return 1;
     case 2: return 14;
     case 3: return 20;
     case 4: return 31;
@@ -304,6 +308,7 @@ function checkPress(color) {
   statusSpan.innerHTML = `Round ${roundCount} of ${maxRoundCount}`;
 
   if (!(computerSequence[index].color === playerSequence[index])) {
+    failureSound.play();
     statusSpan.innerHTML ="bye bye";
     resetGame("bye bye");
   }
@@ -326,7 +331,9 @@ function checkPress(color) {
  */
 
 function checkRound() {
-  if (playerSequence.length === maxRoundCount) { resetGame("Victory!"); }
+  if (playerSequence.length === maxRoundCount) { 
+    successSound.play();
+    resetGame("Victory!"); }
   else {
     roundCount = roundCount + 1;
     playerSequence = [];

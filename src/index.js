@@ -37,30 +37,30 @@ import soundBlue from "../assets/simon-says-sound-3.mp3";
 import soundYellow from "../assets/simon-says-sound-4.mp3";
 */
 
-const successSound = new Audio("../assets/success-acoustic-japan-guitar.mp3");
-const failureSound = new Audio("../assets/wrong-answer-sound-zvonekdoma.mp3");
+const successSound = new Audio("/assets/success-acoustic-japan-guitar.mp3");
+const failureSound = new Audio("/assets/wrong-answer-sound-zvonekdoma.mp3");
 
 
 const pads = [
   {
     color: "red",
     selector: document.querySelector(".js-pad-red"),
-    sound: new Audio("../assets/bell1-kaonaya-bell-at-daitokuji-temple-kyoto.mp3"),
+    sound: new Audio("/assets/bell1-kaonaya-bell-at-daitokuji-temple-kyoto.mp3"),
   },
   {
     color: "green",
     selector: document.querySelector(".js-pad-green"),
-    sound: new Audio("../assets/bell2-snd_fragment_retrievewav-14728.mp3"),
+    sound: new Audio("/assets/bell2-snd_fragment_retrievewav-14728.mp3"),
   },
   {
     color: "blue",
     selector: document.querySelector(".js-pad-blue"),
-    sound: new Audio("../assets/bell3-servant-bell-ring-2-211683.mp3"),
+    sound: new Audio("/assets/bell3-servant-bell-ring-2-211683.mp3"),
   },
   {
     color: "yellow",
     selector: document.querySelector(".js-pad-yellow"),
-    sound: new Audio("../assets/bell4-sleigh-bell-long.mp3"),
+    sound: new Audio("/assets/bell4-sleigh-bell-long.mp3"),
   },
 ];
 
